@@ -5,5 +5,5 @@ console.log("Soy Rhamses")
 
 for(let i=0;i<1000;i++)
 {
-    console.log("pene");
+    console.log("soy mega Rhamses");
 }
