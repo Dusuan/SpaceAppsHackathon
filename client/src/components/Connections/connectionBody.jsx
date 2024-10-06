@@ -1,15 +1,22 @@
 
 import { Button, SimpleGrid} from "@chakra-ui/react";
 
-export default function BodyConnection(){
-
+export default function BodyConnection() {
     return (
-        
-        <SimpleGrid column={4} spacing={30}>
-            {Array.from({length: 16} , (_,index)=> {
-                <Button key={index} >{index+1}</Button>
-            })}
-        </SimpleGrid>
-
+      <SimpleGrid columns={4} spacing={4} justifyContent={'center'} alignItems="center" p={[2, 7, 10]}>
+        {Array.from({ length: 16 }, (_, index) => {
+          return (
+            <Button
+              key={index}
+              bg= "blackAlpha.800"
+              height="100px"
+              color="white"
+              _hover={{ bg: 'teal.600' }}
+            >
+              {index + 1}
+            </Button>
+          );
+        })}
+      </SimpleGrid>
     );
-}
+  }

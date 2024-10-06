@@ -1,15 +1,11 @@
 
 import './App.css';
 import { useState, useEffect } from 'react';
-<<<<<<< HEAD
-=======
- import Main from './pages/Main';
-
->>>>>>> be5bcc790106e54625d99b1d4cb87bce951fbe55
 
 //functions
 import { getTests } from './functions/test';
 import Connection from './pages/connection';
+
 
 
 function App() {
@@ -26,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <p>{data}</p>
-
+      <Connection></Connection>
       </div>
   );
 }
