@@ -1,9 +1,10 @@
 import React, { useState, useEffect} from "react";
-import { Box, Flex, Text, Image, Icon, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, useDisclosure, VStack  } from "@chakra-ui/react";
+import {Flex, Text, Image, Icon, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, useDisclosure, VStack  } from "@chakra-ui/react";
 import FlagSquare from "../components/FlagSquare";
 import { questions } from "../utils/questions";
 import { ods } from "../utils/ods"; // Asegúrate de que este objeto esté correctamente definido
 import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Flags = () => {
     const [vidas, setVidas] = useState(3);
@@ -169,7 +170,9 @@ const Flags = () => {
                         <Button colorScheme="blue" mr={3} onClick={restartGame}>
                             Restart
                         </Button>
-                        <Button onClick={goBackHome}>Back Home</Button>
+                        <Link to="/">
+                        <Button>Back Home</Button>
+                        </Link>
                     </ModalFooter>
                 </ModalContent>
             </Modal>

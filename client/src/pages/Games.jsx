@@ -1,6 +1,7 @@
 import Game from "../components/Games/game";
 import { Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+
 const Games = () => {
   return (
     <>
