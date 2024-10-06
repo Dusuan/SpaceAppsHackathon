@@ -1,11 +1,16 @@
 
 import './App.css';
 import { useState, useEffect } from 'react';
+<<<<<<< HEAD
+=======
  import Main from './pages/Main';
 
+>>>>>>> be5bcc790106e54625d99b1d4cb87bce951fbe55
 
 //functions
 import { getTests } from './functions/test';
+import Connection from './pages/Connections/connection';
+
 
 function App() {
   const [data, setData] = useState("Hello World");
@@ -20,8 +25,8 @@ function App() {
 
   return (
     <div className="App">
-      <Main />
       <p>{data}</p>
+      <h1 className='text-9xl'>Hello world</h1>
     </div>
   );
 }
