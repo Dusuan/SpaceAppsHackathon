@@ -21,7 +21,6 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
   const selectedWords = selectWords(topics, conectorODS);
   const wordsFinal = words(selectedWords);
 
-  const dummy=[];
 
 
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
@@ -42,7 +41,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
                       <InfoOutlineIcon color="blackAlpha.800" boxSize={6} />
 
                     </Tooltip><Link to="/Games">
-                      <Button colorScheme='blackAlpha'> Regresar al Inicio </Button>
+                      <Button colorScheme='blackAlpha'> Return </Button>
                       </Link>
                 </HStack>
               </Box>
@@ -70,7 +69,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
               height="100px"
               color="white"
               _hover={{ bg: 'teal.600' }}
-              onClick={() => dummy.push(wordsFinal[array[index]]) }
+              onClick={() => setArrRespuestas(wordsFinal[array[index]]) }
             >
               {wordsFinal[array[index]]}
             </Button>
@@ -81,7 +80,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
       <Flex color = "white" justify={'center'} align={'center'}>
               <Box p = {7}>
                   <Button onClick={() => ConnectorAnswers(
-                    setArrRespuestas(dummy),arrRespuestas,
+                    setArrRespuestas,arrRespuestas,
                     selectedWords, 
                     setSelectedButtons, setIsDisabled, setScore
                     )}> Submit </Button>
