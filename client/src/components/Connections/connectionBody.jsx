@@ -10,6 +10,10 @@ export default function BodyConnection() {
   const topics = getTopics();
 
   selectWords(topics,conectorODS);
+
+  let array=[0,1,2,3,4,5,6,7,8,9,0,11,12,13,14,15];
+  array.sort(() => Math.random() - 0.5);
+
     return (
       <SimpleGrid columns={4} spacing={4} justifyContent={'center'} alignItems="center" p={[2, 7, 10]}>
         {Array.from({ length: 16 }, (_, index) => {
