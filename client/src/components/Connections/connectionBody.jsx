@@ -2,13 +2,13 @@ import { Button, SimpleGrid} from "@chakra-ui/react";
 import {getTopics , selectWords, words} from "../../functions/GeneralFunctions"
 import conectorODS from "../../utils/conectorODS";
 import {Box, Flex} from '@chakra-ui/react'
-import ConnectorAnswers from "./ConnectorAnswers" //no puedo encontrar el path de este chango  
+import ConnectorAnswers from "../../src/ConnectorAnswers"
 import { Heading } from '@chakra-ui/react';
 import {InfoOutlineIcon} from "@chakra-ui/icons";
 import {HStack } from '@chakra-ui/react'
-import { Tooltip } from '@chakra-ui/react'
-import { CircularProgress} from '@chakra-ui/react'
+import { CircularProgress, Tooltip} from '@chakra-ui/react'
 import {Link } from 'react-router-dom'
+import { useState } from "react";
 
 //setArrRespuestas= opcione elejidas
 //setSelectedButtons= 
@@ -78,14 +78,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
       
       <Flex color = "white" justify={'center'} align={'center'}>
               <Box p = {7}>
-                  <Button onClick={() => ConnectorAnswers(
-                    //checar como paso setArrRespuestas
-                    setArrRespuestas, selectedWords, 
-                    setSelectedButtons, 
-                    setIsDisabled, 
-                    setScore)}> 
-                      Submit 
-                    </Button>
+                  <Button onClick={() => ConnectorAnswers(setArrRespuestas,selectedWords, setSelectedButtons, setIsDisabled, setScore)}> Submit </Button>
               </Box>
         </Flex>
     </Flex>
