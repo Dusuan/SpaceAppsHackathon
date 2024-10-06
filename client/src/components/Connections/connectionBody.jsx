@@ -9,6 +9,7 @@ export default function BodyConnection() {
 
   const topics = getTopics();
 
+  selectWords(topics,conectorODS);
   const selectedWords = selectWords(topics,conectorODS);
 
 
@@ -31,4 +32,4 @@ export default function BodyConnection() {
         })}
       </SimpleGrid>
     );
-  }
+}
