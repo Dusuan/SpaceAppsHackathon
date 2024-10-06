@@ -1,9 +1,10 @@
 import { Box } from "@chakra-ui/react";
-import Landing from "../components/Landing/Landing";
+import Landing from "../pages/Landing";
+import Games from "../pages/Games";
 const Main = () => {
   return (
     <Box>
-      <Landing />
+      <Games/>
     </Box>
   );
 };
