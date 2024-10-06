@@ -1,14 +1,13 @@
 import CheckAns from "./CheckAns";
 
 
-export default function ConnectorAnswers({setArrRespuestas, arrRespuestas, selectedWords, setSelectedButtons, setIsDisabled, setScore, score })
+export default function ConnectorAnswers({setArrRespuestas, arrRespuestas, selectedWords , setIsDisabled, setScore, score })
 {
     const trueOrFalse=CheckAns(arrRespuestas,selectedWords)
     if (trueOrFalse) {
         setIsDisabled(true);
         setArrRespuestas([]); 
-        setSelectedButtons(prev => [...prev, ...arrRespuestas]);  // Mantén los botones seleccionados correctos
-        //checar si funciona el de arrbia
+        
     } 
     else 
     {

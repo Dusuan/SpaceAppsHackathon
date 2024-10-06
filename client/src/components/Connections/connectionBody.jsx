@@ -7,7 +7,7 @@ import { Heading } from '@chakra-ui/react';
 import {InfoOutlineIcon} from "@chakra-ui/icons";
 import {HStack } from '@chakra-ui/react'
 import { CircularProgress, Tooltip} from '@chakra-ui/react'
-import {Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 //setArrRespuestas= opcione elejidas
@@ -16,7 +16,7 @@ import {Link } from 'react-router-dom'
 //setScroe= para la vida
 
 
-export default function BodyConnection(selectedButtons, setSelectedButtons,isDisabled, setIsDisabled,score, setScore, arrRespuestas, setArrRespuestas) {
+export default function BodyConnection(isDisabled, setIsDisabled,score, setScore, arrRespuestas, setArrRespuestas) {
   const topics = getTopics();
   const selectedWords = selectWords(topics, conectorODS);
   const wordsFinal = words(selectedWords);
@@ -59,13 +59,12 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
       <SimpleGrid columns={4} spacing={4} justifyContent="center" alignItems="center" p={[2, 7, 10]}>
         {Array.from({ length: 16 }, (_, index) => {
 
-          const isSelected = selectedButtons.includes(wordsFinal[array[index]]);
           
           return (
             <Button
               key={index}
               isDisabled={isDisabled}
-              bg={isSelected ? 'teal.600' : 'blackAlpha.800'}
+              bg={'blackAlpha.800'}
               height="100px"
               color="white"
               _hover={{ bg: 'teal.600' }}
@@ -82,7 +81,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
                   <Button onClick={() => ConnectorAnswers(
                     setArrRespuestas,arrRespuestas,
                     selectedWords, 
-                    setSelectedButtons, setIsDisabled, setScore
+                   setIsDisabled, setScore
                     )}> Submit </Button>
               </Box>
         </Flex>
