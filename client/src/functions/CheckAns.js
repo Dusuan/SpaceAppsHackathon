@@ -2,7 +2,10 @@ const CheckAns=({a, b})=>
 {
 //a son las respuestas
 // b son los 4 arrays de respuestas de selectedWords del array [][]
-
+    if(a.length > 4);
+    {
+        return false;
+    }
     for(let i=0;i<b.length;i++)
     {
         for(let j=0;j<a.length;j++)
@@ -14,6 +17,7 @@ const CheckAns=({a, b})=>
         }
     }
     return true;
+    */
 }
 
 export default CheckAns;
