@@ -1,7 +1,7 @@
-import CheckAns from "./functions/CheckAns";
+import CheckAns from "./CheckAns";
 
 
-const ConnectorAnswers = ({setArrRespuestas,selectedWords,setSelectedButtons, setIsDisabled, setScore})=>{
+const ConnectorAnswers = ({setArrRespuestas, arrRespuestas ,selectedWords,setSelectedButtons, setIsDisabled, setScore})=>{
 
     const trueOrFalse= CheckAns(arrRespuestas,selectedWords);
 
