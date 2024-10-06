@@ -1,5 +1,6 @@
 import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from '@chakra-ui/react';
-const Game = ({img, name , gameDescription}) => {
+import {Link} from 'react-router-dom';
+const Game = ({img, name , gameDescription, route}) => {
     return (
         <>
         <Card w="70%" className='my-10'>
@@ -20,9 +21,11 @@ const Game = ({img, name , gameDescription}) => {
   </CardBody>
   <Divider />
   <CardFooter justify="center" align="center">
+    <Link to={route}>
       <Button variant='solid' bg="#E5243B">
         Play now
       </Button>
+      </Link>
   </CardFooter>
 </Card>
         </>
