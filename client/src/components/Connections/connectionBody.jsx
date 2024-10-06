@@ -68,7 +68,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
               height="100px"
               color="white"
               _hover={{ bg: 'teal.600' }}
-              onClick={() => arrRespuestas(prev => [...prev, wordsFinal[array[index]]])}
+              onClick={() => setArrRespuestas(prev => [...prev, wordsFinal[array[index]]])}
             >
               {wordsFinal[array[index]]}
             </Button>
@@ -78,7 +78,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
       
       <Flex color = "white" justify={'center'} align={'center'}>
               <Box p = {7}>
-                  <Button onClick={() => ConnectorAnswers(setArrRespuestas,selectedWords, setSelectedButtons, setIsDisabled, setScore)}> Submit </Button>
+                  <Button onClick={() => ConnectorAnswers(setArrRespuestas,arrRespuestas,selectedWords, setSelectedButtons, setIsDisabled, setScore)}> Submit </Button>
               </Box>
         </Flex>
     </Flex>

@@ -1,25 +1,31 @@
 import CheckAns from "./CheckAns";
 
 
-const ConnectorAnswers = ({setArrRespuestas, arrRespuestas ,selectedWords,setSelectedButtons, setIsDisabled, setScore})=>{
+const ConnectorAnswers = ({ setArrRespuestas, arrRespuestas, selectedWords, setSelectedButtons, setIsDisabled, setScore, score }) => {
+    const trueOrFalse = CheckAns(arrRespuestas, selectedWords);
 
-    const trueOrFalse= CheckAns(arrRespuestas,selectedWords);
-
-    if(trueOrFalse)
-    {
-        //if poner los resultados bien y desacrivar los botones y elliminar de arrRespuestas
+    if (trueOrFalse) {
+        // Respuestas correctas: desactivar botones y limpiar respuestas
         setIsDisabled(true);
-        setArrRespuestas([]);
+        setArrRespuestas([]);  // Limpiar el array de respuestas
+        setSelectedButtons(prev => [...prev, ...arrRespuestas]);  // Mantén los botones seleccionados correctos
+    } else {
+        // Respuestas incorrectas: restar 25 puntos
+        setScore(prevScore => {
+            const newScore = prevScore - 25;
+
+            // Si el puntaje llega a 0, desactivar todo
+            if (newScore <= 0) {
+                setIsDisabled(true);
+                // Aquí puedes agregar lógica para redirigir al jugador a la pantalla principal
+                // o mostrar un mensaje indicando que ha perdido
+            }
+
+            return newScore;  // Actualizar el puntaje
+        });
+        
+        setArrRespuestas([]);  // Limpiar el array de respuestas
     }
-    else
-    {
-        setScore(prevScore => prevScore - 25); 
-        setArrRespuestas([]);
-        if(setScore==0)
-        {
-            //si la vida es 0 ->que te regrese a main o que te desactive todo
-        }
-    }
-}
+};
 
 export default ConnectorAnswers;
