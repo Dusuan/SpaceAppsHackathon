@@ -15,11 +15,10 @@ export default function BodyConnection(selectedButtons, setSelectedButtons, isDi
   const topics = getTopics();
   const selectedWords = selectWords(topics, conectorODS);
   const wordsFinal = words(selectedWords);
+  const [arrRespuestas, setArrRespuestas] = useState([]);
 
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   array.sort(() => Math.random() - 0.5);
-
-  let arrRespuestas=[];
 
   return (
     <Flex direction="column">
@@ -56,16 +55,22 @@ export default function BodyConnection(selectedButtons, setSelectedButtons, isDi
           const isSelected = selectedButtons.includes(wordsFinal[array[index]]);
           return (
             <Button
-              key={index}
-              isDisabled={isDisabled}
-              bg={isSelected ? 'teal.600' : 'blackAlpha.800'}
-              height="100px"
-              color="white"
-              _hover={{ bg: 'teal.600' }}
-              onClick={() => arrRespuestas.push(wordsFinal[array[index]])}
-            >
-              {wordsFinal[array[index]]}
-            </Button>
+  key={index}
+  isDisabled={selectedButtons.includes(wordsFinal[array[index]])}  // Deshabilitar si ya está en selectedButtons
+  bg={selectedButtons.includes(wordsFinal[array[index]]) ? 'teal.600' : 'blackAlpha.800'}  // Cambiar color si está seleccionado
+  height="100px"
+  color="white"
+  _hover={{ bg: 'teal.600' }}
+  onClick={() => {
+    // Solo agrega si no está en selectedButtons
+    if (!selectedButtons.includes(wordsFinal[array[index]])) {
+      setSelectedButtons(prev => [...prev, wordsFinal[array[index]]]);
+      arrRespuestas.push(wordsFinal[array[index]]);  // Actualiza arrRespuestas con la selección
+    }
+  }}
+>
+  {wordsFinal[array[index]]}
+</Button>
           );
         })}
       </SimpleGrid>
