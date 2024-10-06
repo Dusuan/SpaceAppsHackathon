@@ -2,7 +2,7 @@
 
 export const checkAnswers=(a, b)=>
 {
-    for(let i=0;i<a.length;i++)
+    for(let i=0;i<b.length;i++)
     {
         for(let j=0;j<a.length;j++)
         {
