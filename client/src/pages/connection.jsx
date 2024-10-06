@@ -1,4 +1,4 @@
-import HeaderConnection from "./connectionHeader";
+import HeaderConnection from "../components/Connections/connectionHeader";
 
 export default function Connection(){
 
