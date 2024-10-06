@@ -1,6 +1,8 @@
 import { Flex, Spacer } from "@chakra-ui/react";
 import { Box, Text, Image, Button } from "@chakra-ui/react";
 import theme from "../../utils/theme";
+import { Link } from 'react-router-dom';
+
 const ChallengeLanding = () => {
   return (
     <>
