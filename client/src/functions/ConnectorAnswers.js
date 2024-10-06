@@ -13,7 +13,7 @@ export default function ConnectorAnswers({setArrRespuestas, arrRespuestas, selec
     else 
     {
         setScore(score-25);
-        if (score= === 0) 
+        if (score === 0) 
         {
             setIsDisabled(true);
         }
