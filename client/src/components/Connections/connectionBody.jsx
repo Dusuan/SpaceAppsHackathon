@@ -2,7 +2,7 @@ import { Button, SimpleGrid} from "@chakra-ui/react";
 import {getTopics , selectWords, words} from "../../functions/GeneralFunctions"
 import conectorODS from "../../utils/conectorODS";
 import {Box, Flex} from '@chakra-ui/react'
-import ConnectorAnswers from "../../src/ConnectorAnswers"
+import ConnectorAnswers from "./ConnectorAnswers" //no puedo encontrar el path de este chango  
 import { Heading } from '@chakra-ui/react';
 import {InfoOutlineIcon} from "@chakra-ui/icons";
 import {HStack } from '@chakra-ui/react'
@@ -16,11 +16,11 @@ import {Link } from 'react-router-dom'
 //setScroe= para la vida
 
 
-export default function BodyConnection(selectedButtons, setSelectedButtons,isDisabled, setIsDisabled,score, setScore) {
+export default function BodyConnection(selectedButtons, setSelectedButtons,isDisabled, setIsDisabled,score, setScore, arrRespuestas, setArrRespuestas) {
   const topics = getTopics();
   const selectedWords = selectWords(topics, conectorODS);
   const wordsFinal = words(selectedWords);
-  const [arrRespuestas, setArrRespuestas] = useState([]);
+
 
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   array.sort(() => Math.random() - 0.5);
@@ -68,7 +68,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
               height="100px"
               color="white"
               _hover={{ bg: 'teal.600' }}
-              onClick={() => setArrRespuestas(prev => [...prev, wordsFinal[array[index]]])}
+              onClick={() => arrRespuestas(prev => [...prev, wordsFinal[array[index]]])}
             >
               {wordsFinal[array[index]]}
             </Button>
@@ -78,7 +78,14 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
       
       <Flex color = "white" justify={'center'} align={'center'}>
               <Box p = {7}>
-                  <Button onClick={() => ConnectorAnswers(setArrRespuestas,selectedWords, setSelectedButtons, setIsDisabled, setScore)}> Submit </Button>
+                  <Button onClick={() => ConnectorAnswers(
+                    //checar como paso setArrRespuestas
+                    setArrRespuestas, selectedWords, 
+                    setSelectedButtons, 
+                    setIsDisabled, 
+                    setScore)}> 
+                      Submit 
+                    </Button>
               </Box>
         </Flex>
     </Flex>
