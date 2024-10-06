@@ -16,7 +16,7 @@ import {Link} from 'react-router-dom'
 //setScroe= para la vida
 
 
-export default function BodyConnection(isDisabled, setIsDisabled,score, setScore, arrRespuestas, setArrRespuestas) {
+export default function BodyConnection({isDisabled, setIsDisabled, score, setScore, arrRespuestas, setArrRespuestas}) {
   const topics = getTopics();
   const selectedWords = selectWords(topics, conectorODS);
   const wordsFinal = words(selectedWords);
@@ -65,6 +65,7 @@ export default function BodyConnection(isDisabled, setIsDisabled,score, setScore
               key={index}
               bg={'blackAlpha.800'}
               height="100px"
+              isDisabled={isDisabled}
               color="white"
               _hover={{ bg: 'teal.600' }}
               onClick={() => setArrRespuestas(wordsFinal[array[index]]) }
