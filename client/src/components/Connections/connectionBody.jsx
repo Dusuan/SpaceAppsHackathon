@@ -7,7 +7,7 @@ import conectorODS from "../../utils/conectorODS";
 
 export default function BodyConnection() {
 
-  const topics = getTopics();
+  const topics = getTopics()
 
   selectWords(topics,conectorODS);
   const selectedWords = selectWords(topics,conectorODS);
