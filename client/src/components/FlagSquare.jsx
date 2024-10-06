@@ -1,21 +1,43 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 import { ods } from '../utils/ods';
 import theme from '../utils/theme';
+import { odsImgPath } from '../utils/odsImgPath';
 
-const FlagSquare = ({odsActual, vidas, setVidas, correcto}) => {
+const FlagSquare = ({odsActual, onClick}) => {
 
-    //Agarra un nombre de la ods y la busca en la db saca la info y la utilliza para crear un cuadro
     return (
         <Flex
-            w="100px"
-            h="100px"
+            onClick={onClick}
+            cursor="pointer"
+            justifyContent="space-between"
+            alignItems="center"
             bgColor={theme.colors[odsActual]}
+            flexDirection={"column"}
+            w={["120px", "250px"]}
+            h={["175px", "300px"]}
+            borderRadius={"10px"}
+            boxShadow={"md"}
+            border={"5px solid black"}
         >
-            <Box>
-                Descripcion
-                {ods[odsActual]}
-            </Box>
+                <Image 
+                    src={process.env.PUBLIC_URL + odsImgPath[odsActual]}
+                    alt={odsActual}
+                    width={["120px", "250px"]}
+                />
+                <Text
+                    display={"flex"}
+                    fontSize={["0.75rem", "l"]}
+                    fontWeight={"bold"}
+                    color={"white"}
+                    h={["55px", "50px"]}
+                    textAlign={"center"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    w={"95%"}
+                >
+                    {odsActual}
+                </Text>
         </Flex>
     );
 };
