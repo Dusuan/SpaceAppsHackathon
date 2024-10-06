@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 require('dotenv').config();
 
+const path = require('path');
 
 //app
 const app = express();
@@ -16,7 +17,10 @@ mongoose.connect(process.env.MONGO_URI).then(() => console.log('DB connected')).
 app.use(morgan('dev'));
 app.use(cors({origin: true, credenttials: true}));
 
-
+app.use(express.static("./client/build"));
+app.get("*", (req,res) =>{
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+})
 //router
 const testRouter = require('./routes/test');
 app.use('/', testRouter);
