@@ -1,4 +1,4 @@
-    const getTopics = () => { 
+    export const getTopics = () => { 
         const mySet = new Set();
         const topics=["Fin de la pobreza","Hambre cero","Salud y bienestar","Educación de calidad", "Igualdad de género", "Agua limpia y saneamiento","Trabajo decente y crecimiento económico","Industria, innovación e infraestructura","Reducción de las desigualdades","Ciudades y comunidades sostenibles","Producción y consumo responsables","Acción por el clima","Vida submarina","Vida de ecosistemas terrestres","Paz, justicia e instituciones sólidas","Alianzas para lograr los objetivos"]
 
@@ -14,10 +14,9 @@
         return myNewArray;
     }
 
-    export const selectWords = (conectorODS) => 
+    export const selectWords = (topics, conectorODS) => 
     {
         let arr;
-        let topics=getTopics();
         for(let i = 0; i< topics.length ; i++)
         {
             const randomIndex = Math.floor(Math.random() * 3);
