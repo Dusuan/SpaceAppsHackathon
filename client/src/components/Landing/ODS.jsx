@@ -23,7 +23,8 @@ const Ods = ({ ODS }) => {
   };
   return (
     <>
-      <Box>
+      <Box className="py-10">
+        <Text fontSize={["md", "2xl"]} className="pb-8">Check some information clicking on the images!</Text>
         <Wrap p="1" align="center" justify="center">
           {Object.entries(ODS).map(([key, ods]) => (
             <WrapItem key={key} mb={4}>

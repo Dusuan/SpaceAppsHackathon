@@ -34,23 +34,33 @@ const ChallengeLanding = () => {
           <Image
             className="w-full"
             h="100vh"
-            opacity={"40%"}
+            opacity={"50%"}
             src="/odsds.jpg"
           ></Image>
 
-          <Text
+          <Box
             position="absolute"
             top="40%"
             left="50%"
             transform="translate(-50%, -50%)"
-            color="black"
-            fontSize="7xl" // Adjust the font size as needed
-            textAlign="center"
+            bg="rgba(255, 255, 255, 0.2)" 
+            borderRadius="lg"
+            backdropFilter="blur(20px)" 
+            p={4} 
+            boxShadow="lg" 
           >
-            The ODS Challenge
-          </Text>
+            <Text
+              color="black"
+              fontWeight="bold"
+              fontSize={["md", "3xl", "4xl", "5xl"]}
+              textAlign="center"
+            >
+              The ODS Challenge
+            </Text>
+          </Box>
           <Button
             size={["lg"]}
+            w={["200px"]}
             transform="translate(-50%, -50%)"
             bottom="30%"
             position="absolute"
@@ -58,7 +68,7 @@ const ChallengeLanding = () => {
             bgColor="#E5243B"
             variant="solid"
           >
-            Try the challenge!
+            Try it!
           </Button>
         </Box>
       </Flex>
