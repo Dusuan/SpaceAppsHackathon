@@ -15,7 +15,7 @@ export default function Connection(){
             </Box>
 
             <Box>
-                <BodyConnection></BodyConnection>
+                <BodyConnection ></BodyConnection>
             </Box>
 
             <Box>
