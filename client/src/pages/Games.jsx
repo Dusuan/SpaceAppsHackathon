@@ -6,8 +6,8 @@ const Games = () => {
   return (
     <>
       <Flex bg="blackAlpha.400"flexDir="column" justify="center" align="center">
-        <Game img={"/dayone.jpg"} gameDescription={"Juego similar a connections"} name={"Rhamses Orozco"} route={"/Connections"} />
-        <Game img={"/dayone.jpg"} gameDescription={"Juego similar a connections"} name={"Connections"} route={"/Flags"}/>
+      <Game img={"/FlagsGame.png"} gameDescription={"A game where you’ll test your knowledge of the SDGs to see if you're ready for the next challenge."} name={"Flags Game"} route={"/Flags"}/>
+        <Game img={"/dayone.jpg"} gameDescription={"Today's challenge: Connect 4 words."} name={"Connections"} route={"/Connections"} />
       </Flex>
     </>
   );
