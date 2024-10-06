@@ -1,6 +1,6 @@
 import CheckAns from "../../src/CheckAns"
 
-const ConnectorAnswers=(arrRespuestas,selectedWords,setSelectedButtons, setIsDisabled, setScore)=>{
+export const ConnectorAnswers=(arrRespuestas,selectedWords,setSelectedButtons, setIsDisabled, setScore)=>{
 
     const trueOrFalse= CheckAns(arrRespuestas,selectedWords);
 

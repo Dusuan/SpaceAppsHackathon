@@ -1,8 +1,8 @@
-import { Button, SimpleGrid} from "@chakra-ui/react";
+import { Button, IconButton, SimpleGrid} from "@chakra-ui/react";
 import {getTopics , selectWords, words} from "../../functions/GeneralFunctions"
 import conectorODS from "../../utils/conectorODS";
 import {Box, Flex} from '@chakra-ui/react'
-import ConnectorAnswers from "../../src/ConnectorAnswers"
+import ConnectorAnswers from "../../functions/ConnectorAnswers"
 import { Heading } from '@chakra-ui/react';
 import {InfoOutlineIcon} from "@chakra-ui/icons";
 import {HStack } from '@chakra-ui/react'
@@ -32,8 +32,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons, isDi
               <Box  p='16'>
                 <HStack spacing='24px' >
                     <Tooltip label = 'Info del Juego Proximamnete' isDisabled = {{base : true, md: false}}>
-
-                      <InfoOutlineIcon color="blackAlpha.800" boxSize={6} />
+                    <IconButton size={'lg'} icon={<InfoOutlineIcon color="blackAlpha.800" boxSize={6} />} ></IconButton>
 
                     </Tooltip><Link to="/Games">
                       <Button colorScheme='blackAlpha'> Regresar al Inicio </Button>
