@@ -7,6 +7,7 @@ import Landing from "./pages/Landing";
 //functions
 import { getTests } from "./functions/test";
 import Connection from "./pages/connection";
+import Games from "./pages/Games";
 
 function App() {
   const [data, setData] = useState("Hello World");
@@ -28,7 +29,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/Main" element={<Main />} />
-          <Route path="/connection" element={<Connection />} />
+          <Route path="/Connection" element={<Connection />} />
+          <Route path="/Games" element={<Games />} />
+          <Route path="/Flags" element={<Games/>} />
         </Routes>
       </Router>
     </div>
