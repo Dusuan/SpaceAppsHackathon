@@ -1,5 +1,3 @@
-
-
 export const checkAnswers=(a, b)=>
 {
     for(let i=0;i<b.length;i++)
