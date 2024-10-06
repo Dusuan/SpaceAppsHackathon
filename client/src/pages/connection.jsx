@@ -4,7 +4,6 @@ import { Flex, Box} from '@chakra-ui/react';
 
 export default function Connection()
 {
-    const [selectedButtons, setSelectedButtons] = useState([]);
     const [isDisabled, setIsDisabled] = useState(false);
     const [score, setScore] = useState(100); 
     const [arrRespuestas, setArrRespuestas] = useState([]);

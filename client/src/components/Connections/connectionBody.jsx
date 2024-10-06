@@ -63,7 +63,6 @@ export default function BodyConnection(isDisabled, setIsDisabled,score, setScore
           return (
             <Button
               key={index}
-              isDisabled={isDisabled}
               bg={'blackAlpha.800'}
               height="100px"
               color="white"
