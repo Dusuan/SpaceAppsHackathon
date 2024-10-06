@@ -1,4 +1,4 @@
-const CheckAns=({a, b})=>
+const CheckAns=({a=[], b=[]})=>
 {
 //a son las respuestas
 // b son los 4 arrays de respuestas de selectedWords del array [][]
