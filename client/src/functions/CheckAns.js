@@ -1,18 +1,15 @@
 
 
-export const checkAnswers=(a, b)=>{
-    
-    if(a.length!=b.length)
-    {
-        console.log('El error esta en en los tamaños');
-        return false;
-    }
-
+export const checkAnswers=(a, b)=>
+{
     for(let i=0;i<a.length;i++)
     {
-        if(a[i]===b[i])
+        for(let j=0;j<a.length;j++)
         {
-            return false;
+            if(a[j]!==b[i][j])
+            {
+                return false;
+            }
         }
     }
     return true;
