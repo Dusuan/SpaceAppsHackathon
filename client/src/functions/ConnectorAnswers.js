@@ -1,13 +1,10 @@
-import CheckAns from "./CheckAns";
-
 
 export default function ConnectorAnswers({setArrRespuestas, arrRespuestas, selectedWords , setIsDisabled, setScore, score })
 {
     const trueOrFalse=CheckAns(arrRespuestas,selectedWords)
     if (trueOrFalse) {
-        setIsDisabled(true);
         setArrRespuestas([]); 
-        
+        setIsDisabled(true);
     } 
     else 
     {
@@ -19,3 +16,15 @@ export default function ConnectorAnswers({setArrRespuestas, arrRespuestas, selec
         setArrRespuestas([]);
     }
 };
+
+    function CheckAns(arrRespuestas, selectedWords) {
+
+    for (let i = 0; i < selectedWords.length; i++) {
+        for (let j = 0; j < arrRespuestas.length; j++) {
+            if (arrRespuestas[j] !== selectedWords[i][j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}

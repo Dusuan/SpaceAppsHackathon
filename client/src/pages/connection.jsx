@@ -6,7 +6,9 @@ export default function Connection()
 {
     const [isDisabled, setIsDisabled] = useState(false);
     const [score, setScore] = useState(100); 
-    const [arrRespuestas, setArrRespuestas] = useState([]);
+    const [arrRespuestas, setArrRespuestas] = useState([1,2,3]);
+    //estos son los datos que busco cambiar en el juego: desactivar los botones, la vida (score), 
+    //array donde pongo las frases o palabras 
 
 
     return(
@@ -16,7 +18,6 @@ export default function Connection()
                 isDisabled={isDisabled} setIsDisabled={()=>setIsDisabled}
                 score={score} setScore={()=>setScore}
                 arrRespuestas={arrRespuestas} setArrRespuestas={()=>setArrRespuestas}>
-
                 </BodyConnection>
             </Box>
         </Flex>

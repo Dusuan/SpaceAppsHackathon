@@ -2,27 +2,24 @@ import { Button, SimpleGrid} from "@chakra-ui/react";
 import {getTopics , selectWords, words} from "../../functions/GeneralFunctions"
 import conectorODS from "../../utils/conectorODS";
 import {Box, Flex} from '@chakra-ui/react'
-import ConnectorAnswers from '../../functions/ConnectorAnswers';// no encuentro la direccion de memorio   src\functions\ConnectorAnswers 
+import ConnectorAnswers from '../../functions/ConnectorAnswers';
 import { Heading } from '@chakra-ui/react';
 import {InfoOutlineIcon} from "@chakra-ui/icons";
-import {HStack } from '@chakra-ui/react'
+import {HStack} from '@chakra-ui/react'
 import { CircularProgress, Tooltip} from '@chakra-ui/react'
 import {Link} from 'react-router-dom'
 
 
 //setArrRespuestas= opcione elejidas
-//setSelectedButtons= 
 //setIsDisabled= para desactivar los botones
-//setScroe= para la vida
-
+//setScrole= para la vida
 
 export default function BodyConnection({isDisabled, setIsDisabled, score, setScore, arrRespuestas, setArrRespuestas}) {
   const topics = getTopics();
   const selectedWords = selectWords(topics, conectorODS);
   const wordsFinal = words(selectedWords);
 
-
-
+  //para acomodar todo random
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   array.sort(() => Math.random() - 0.5);
 
@@ -68,7 +65,7 @@ export default function BodyConnection({isDisabled, setIsDisabled, score, setSco
               isDisabled={isDisabled}
               color="white"
               _hover={{ bg: 'teal.600' }}
-              onClick={() => setArrRespuestas(wordsFinal[array[index]]) }
+              onClick={() => setArrRespuestas([...arrRespuestas,wordsFinal[array[index]]])}
             >
               {wordsFinal[array[index]]}
             </Button>
@@ -80,8 +77,7 @@ export default function BodyConnection({isDisabled, setIsDisabled, score, setSco
               <Box p = {7}>
                   <Button onClick={() => ConnectorAnswers(
                     setArrRespuestas,arrRespuestas,
-                    selectedWords, 
-                   setIsDisabled, setScore
+                    selectedWords, setIsDisabled, setScore, score
                     )}> Submit </Button>
               </Box>
         </Flex>
