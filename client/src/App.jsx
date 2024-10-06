@@ -22,7 +22,6 @@ function App() {
     <div className="App">
       <Main />
       <p>{data}</p>
-      <h1 className='text-9xl'>Hello world</h1>
     </div>
   );
 }
