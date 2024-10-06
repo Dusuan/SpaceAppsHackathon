@@ -1,4 +1,4 @@
-import CheckAns from "../../src/CheckAns"
+import CheckAns from "./functions/CheckAns";
 
 
 const ConnectorAnswers = ({arrRespuestas,selectedWords,setSelectedButtons, setIsDisabled, setScore})=>{
@@ -8,7 +8,7 @@ const ConnectorAnswers = ({arrRespuestas,selectedWords,setSelectedButtons, setIs
     if(trueOrFalse)
     {
         //if poner los resultados bien y desacrivar los botones y elliminar de arrRespuestas
-        setIsDisabled=true;
+        setIsDisabled(true);
         setSelectedButtons=[];
     }
     else

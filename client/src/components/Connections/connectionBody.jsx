@@ -11,15 +11,14 @@ import { CircularProgress} from '@chakra-ui/react'
 import {Link } from 'react-router-dom'
 
 
-export default function BodyConnection(selectedButtons, setSelectedButtons, isDisabled, setIsDisabled, score, setScore) {
+export default function BodyConnection(setSelectedButtons, isDisabled, setIsDisabled, score, setScore) {
   const topics = getTopics();
   const selectedWords = selectWords(topics, conectorODS);
   const wordsFinal = words(selectedWords);
+  const [arrRespuestas, setArrRespuestas] = useState([]);
 
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   array.sort(() => Math.random() - 0.5);
-
-  let arrRespuestas=[];
 
   return (
     <Flex direction="column">
@@ -62,7 +61,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons, isDi
               height="100px"
               color="white"
               _hover={{ bg: 'teal.600' }}
-              onClick={() => arrRespuestas.push(wordsFinal[array[index]])}
+              onClick={() => setArrRespuestas(prev => [...prev, wordsFinal[array[index]]])}
             >
               {wordsFinal[array[index]]}
             </Button>
