@@ -1,8 +1,7 @@
 import CheckAns from "./CheckAns";
 
 
-const ConnectorAnswers = ({ setArrRespuestas, arrRespuestas, selectedWords, setSelectedButtons, setIsDisabled, setScore, score }) => {
-    const trueOrFalse = CheckAns(arrRespuestas, selectedWords);
+const ConnectorAnswers = ({ setArrRespuestas, selectedWords, setSelectedButtons, setIsDisabled, setScore, score }) => {
 
     if (trueOrFalse) {
         // Respuestas correctas: desactivar botones y limpiar respuestas

@@ -1,4 +1,3 @@
-import HeaderConnection from "../components/Connections/connectionHeader";
 import BodyConnection from "../components/Connections/connectionBody"
 import { useState } from 'react';
 import { Flex, Box} from '@chakra-ui/react';
