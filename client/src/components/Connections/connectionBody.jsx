@@ -2,7 +2,7 @@ import { Button, SimpleGrid} from "@chakra-ui/react";
 import {getTopics , selectWords, words} from "../../functions/GeneralFunctions"
 import conectorODS from "../../utils/conectorODS";
 import {Box, Flex} from '@chakra-ui/react'
-import {ConnectorAnswers} from '../components/ConnectorAnswers';// no encuentro la direccion de memorio 
+import ConnectorAnswers from '../../functions/ConnectorAnswers';// no encuentro la direccion de memorio   src\functions\ConnectorAnswers 
 import { Heading } from '@chakra-ui/react';
 import {InfoOutlineIcon} from "@chakra-ui/icons";
 import {HStack } from '@chakra-ui/react'

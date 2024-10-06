@@ -3,7 +3,7 @@ import CheckAns from "./CheckAns";
 
 export default function ConnectorAnswers({setArrRespuestas, arrRespuestas, selectedWords, setSelectedButtons, setIsDisabled, setScore, score })
 {
-    CheckAns(arrRespuestas,selectedWords)
+    const trueOrFalse=CheckAns(arrRespuestas,selectedWords)
     if (trueOrFalse) {
         setIsDisabled(true);
         setArrRespuestas([]); 
