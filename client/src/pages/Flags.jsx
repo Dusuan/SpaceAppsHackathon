@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import FlagSquare from "../components/FlagSquare";
 import { questions } from "../utils/questions";
 import { ods } from "../utils/ods"; // Asegúrate de que este objeto esté correctamente definido
@@ -50,31 +50,79 @@ const Flags = () => {
     };
 
     return (
-        <Box>
-            <Flex justifyContent="center" alignItems="center" h="10vh" flexDirection="column">
-                <Text fontSize="xl">ODS Flags</Text>
-                <Text fontSize="lg">{ods[currentAnswer]}</Text> {/* Muestra el nombre de la ODS correcta */}
-                <Text>Vidas: {vidas}</Text>
-                <Text>Score: {score}</Text>
-                <Text>{message}</Text>
+        <Flex
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            w="100%"
+        >
+            <Flex
+                justifyContent={"space-between"}
+                alignItems={"center"}
+                h={"15vh"}
+                bgColor={"gray.200"}
+                w={"100%"}
+            >
+                <Image
+                    src={process.env.PUBLIC_URL + "/Images/ODS Logo.png"}
+                    alt="ODS Logo"
+                    width="100px"
+                />
+
+                <Flex
+                    flexDirection="column"
+                    justifyContent="center"
+                    alignItems="center"
+                >
+                    <Text
+                        fontSize={["xl", "3xl"]}
+                    >SDGs Flag Game</Text>
+                    <Text
+                        fontSize={"xl"}
+                        fontWeight={"light"}
+                    >Guess the SDG</Text>
+                </Flex>
+
+                <Image
+                    src={process.env.PUBLIC_URL + "/Images/ODS Logo.png"}
+                    alt="ODS Logo"
+                    width="100px"
+                />
             </Flex>
-            <Box
-                display="flex"
+
+            <Flex justifyContent="center" alignItems="center" h="20vh" flexDirection="column">
+                <Text fontSize="lg" fontWeight={"bold"}>{`"${ods[currentAnswer]}"`}</Text>
+                <Text mt="1.5">{i+1}/17</Text>
+            </Flex>
+
+            {/**display modal of message */}
+            <Flex
                 flexWrap="wrap"
                 justifyContent="center"
+                gap={5}
                 alignItems="center"
-                maxW="100%"
-                h="90vh" // Reducir la altura para dar más espacio al área de juego
+                width="100%"
             >
                 {currentQuestion.map((ods, index) => (
                     <FlagSquare
                         key={index}
                         odsActual={Object.keys(ods)[0]}
-                        onClick={() => verifyAnswer(ods)} // Pasamos el objeto de la ODS
+                        onClick={() => verifyAnswer(ods)}
+                        flex="1 1 calc(50% - 10px)"
                     />
                 ))}
-            </Box>
-        </Box>
+            </Flex>
+
+            <Flex
+                justifyContent="space-around"
+                alignItems="center"
+                width="100%"
+                h="15vh"
+            >
+                <Text>Vidas: {vidas}</Text>
+                <Text>Score: {score}</Text>
+            </Flex>
+        </Flex>
     );
 };
 

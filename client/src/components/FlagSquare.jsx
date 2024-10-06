@@ -10,22 +10,34 @@ const FlagSquare = ({odsActual, onClick}) => {
         <Flex
             onClick={onClick}
             cursor="pointer"
-            justifyContent="center"
+            justifyContent="space-between"
             alignItems="center"
             bgColor={theme.colors[odsActual]}
+            flexDirection={"column"}
+            w={["120px", "250px"]}
+            h={["150px", "250px"]}
+            borderRadius={"10px"}
+            boxShadow={"md"}
+            border={"5px solid black"}
         >
-            <Box
-                width="250px"
-            >
                 <Image 
                     src={process.env.PUBLIC_URL + odsImgPath[odsActual]}
                     alt={odsActual}
-                    width="250px"
+                    width={["120px", "250px"]}
                 />
-                <Text>
+                <Text
+                    display={"flex"}
+                    fontSize={["0.5rem", "l"]}
+                    fontWeight={"bold"}
+                    color={"white"}
+                    h={["30px", "50px"]}
+                    textAlign={"center"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    w={"95%"}
+                >
                     {odsActual}
                 </Text>
-            </Box>
         </Flex>
     );
 };
