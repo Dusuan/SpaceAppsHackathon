@@ -5,7 +5,7 @@ import {InfoOutlineIcon} from "@chakra-ui/icons";
 import { Button } from '@chakra-ui/react'
 import {HStack } from '@chakra-ui/react'
 import { Tooltip } from '@chakra-ui/react'
-
+import {Link } from 'react-router-dom'
 export default function HeaderConnection(){
 
     return(
@@ -23,7 +23,9 @@ export default function HeaderConnection(){
             <InfoOutlineIcon color="blackAlpha.800" boxSize={6} />
 
            </Tooltip>
+           <Link to="/Games">
             <Button colorScheme='blackAlpha'> Regresar al Inicio </Button>
+            </Link>
         </HStack>
         
        </Box>

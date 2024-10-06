@@ -110,7 +110,7 @@ const ODS = {
 
 const Landing = () => {
   return (
-    <Box bg={""}>
+    <Box bg="blackAlpha.100">
       <ChallengeLanding />
       <AboutUs />
       <Ods ODS={ODS} />

@@ -20,13 +20,13 @@ const ChallengeLanding = () => {
         </Box>
 
         <Box className="Imagen md:hidden">
-          <a href="a">
+          <Link to="/Games">
             <Image
               src="/StartChallenge.png"
               h={["auto, auto, auto, 100vh"]}
               opacity={"100%"}
-            />
-          </a>
+            />  
+          </Link>
         </Box>
         <Box
           alignItems="center"
@@ -39,7 +39,7 @@ const ChallengeLanding = () => {
             opacity={"50%"}
             src="/odsds.jpg"
           ></Image>
-
+          
           <Box
             position="absolute"
             top="40%"
@@ -60,6 +60,7 @@ const ChallengeLanding = () => {
               The ODS Challenge
             </Text>
           </Box>
+          <Link to="/Games">
           <Button
             size={["lg"]}
             w={["200px"]}
@@ -72,6 +73,7 @@ const ChallengeLanding = () => {
           >
             Try it!
           </Button>
+          </Link>
         </Box>
       </Flex>
     </>

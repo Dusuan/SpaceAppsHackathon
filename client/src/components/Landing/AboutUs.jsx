@@ -26,12 +26,11 @@ const About = () => {
               src="/MEGALOGO.png"
               alt="about us"
             />
-            <Heading size="sm" fontSize='5xl' my={4} mb={4}>
+            <Heading fontSize={["3xl", "4xl", "5xl"]}my={4} mb={4}>
               ¿Why did we do this project?
             </Heading>
-            <Text fontSize='3xl'>
-              We did this project to help people to know about the ODS and how
-              they can help to achieve them through didactic games. asddf df sdf
+            <Text fontSize={["md, 3xl, 3xl, 3xl, 3xl"]}>
+            We created this project to raise awareness about the Sustainable Development Goals (SDGs) and demonstrate how students can contribute to achieving these goals through interactive, educational games. Our goal is to make learning about the SDGs fun and engaging, helping young people understand the importance of global challenges such as climate action, reducing inequalities, and promoting peace and justice. Through these games, we hope to inspire students to take action in their own communities.
             </Text>
           </CardBody>
           <CardFooter></CardFooter>
