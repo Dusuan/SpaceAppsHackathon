@@ -6,7 +6,6 @@ export default function Connection(){
     return(
         <div>
             <HeaderConnection></HeaderConnection>
-
         </div>
     );
 }

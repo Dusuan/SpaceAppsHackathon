@@ -13,7 +13,9 @@ const ChallengeLanding = () => {
                     </Box>
                     <Spacer />
                     <Box w="20%">
-                        <Text>Logo</Text>
+
+                    <Image src="/logocheto.png" w="100px" h="100px"/>
+
                     </Box>
                     <Spacer />
                     <Box w="20%">

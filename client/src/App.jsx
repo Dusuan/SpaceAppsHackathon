@@ -1,11 +1,8 @@
 
 import './App.css';
 import { useState, useEffect } from 'react';
-<<<<<<< HEAD
-=======
  import Main from './pages/Main';
 
->>>>>>> be5bcc790106e54625d99b1d4cb87bce951fbe55
 
 //functions
 import { getTests } from './functions/test';
@@ -25,8 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>{data}</p>
-      <h1 className='text-9xl'>Hello world</h1>
+      <Main/>
     </div>
   );
 }
