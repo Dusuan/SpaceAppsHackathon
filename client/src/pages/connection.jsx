@@ -13,9 +13,14 @@ export default function Connection(){
 
     return(
         <Flex direction={"column"}>
+
             <Box>
-                <BodyConnection selectedButtons={selectedButtons} setSelectedButtons={() =>setSelectedButtons} 
-                isDisabled={isDisabled} setIsDisabled={() =>setIsDisabled} score={score} setScore={() => setScore} ></BodyConnection>
+                <BodyConnection 
+                selectedButtons={selectedButtons} setSelectedButtons={() =>setSelectedButtons} 
+                isDisabled={isDisabled} setIsDisabled={() =>setIsDisabled} 
+                score={score} setScore={() => setScore} >
+                    
+                </BodyConnection>
             </Box>
         </Flex>
         

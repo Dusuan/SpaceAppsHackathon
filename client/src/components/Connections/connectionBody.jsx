@@ -10,8 +10,13 @@ import { Tooltip } from '@chakra-ui/react'
 import { CircularProgress} from '@chakra-ui/react'
 import {Link } from 'react-router-dom'
 
+//setArrRespuestas= opcione elejidas
+//setSelectedButtons= 
+//setIsDisabled= para desactivar los botones
+//setScroe= para la vida
 
-export default function BodyConnection(setSelectedButtons, isDisabled, setIsDisabled, score, setScore) {
+
+export default function BodyConnection(selectedButtons, setSelectedButtons,isDisabled, setIsDisabled,score, setScore) {
   const topics = getTopics();
   const selectedWords = selectWords(topics, conectorODS);
   const wordsFinal = words(selectedWords);
@@ -52,7 +57,9 @@ export default function BodyConnection(setSelectedButtons, isDisabled, setIsDisa
 
       <SimpleGrid columns={4} spacing={4} justifyContent="center" alignItems="center" p={[2, 7, 10]}>
         {Array.from({ length: 16 }, (_, index) => {
+
           const isSelected = selectedButtons.includes(wordsFinal[array[index]]);
+          
           return (
             <Button
               key={index}
@@ -71,7 +78,7 @@ export default function BodyConnection(setSelectedButtons, isDisabled, setIsDisa
       
       <Flex color = "white" justify={'center'} align={'center'}>
               <Box p = {7}>
-                  <Button onClick={() => ConnectorAnswers(arrRespuestas,selectedWords, setSelectedButtons, setIsDisabled, setScore)}> Submit </Button>
+                  <Button onClick={() => ConnectorAnswers(setArrRespuestas,selectedWords, setSelectedButtons, setIsDisabled, setScore)}> Submit </Button>
               </Box>
         </Flex>
     </Flex>
