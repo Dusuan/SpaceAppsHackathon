@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import Landing from "./Landing/Landing";
+import Landing from "../components/Landing/Landing";
 const Main = () => {
   return (
     <Box>
