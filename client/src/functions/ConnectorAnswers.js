@@ -1,25 +1,22 @@
 import CheckAns from "./CheckAns";
 
 
-const ConnectorAnswers = ({setArrRespuestas, arrRespuestas ,selectedWords,setSelectedButtons, setIsDisabled, setScore})=>{
-
-    const trueOrFalse= CheckAns(arrRespuestas,selectedWords);
-
-    if(trueOrFalse)
-    {
-        //if poner los resultados bien y desacrivar los botones y elliminar de arrRespuestas
+export default function ConnectorAnswers({setArrRespuestas, arrRespuestas, selectedWords, setSelectedButtons, setIsDisabled, setScore, score })
+{
+    const trueOrFalse=CheckAns(arrRespuestas,selectedWords)
+    if (trueOrFalse) {
         setIsDisabled(true);
-        setArrRespuestas([]);
-    }
-    else
+        setArrRespuestas([]); 
+        setSelectedButtons(prev => [...prev, ...arrRespuestas]);  // Mantén los botones seleccionados correctos
+        //checar si funciona el de arrbia
+    } 
+    else 
     {
-        setScore(prevScore => prevScore - 25); 
-        setArrRespuestas([]);
-        if(setScore==0)
+        setScore(score-25);
+        if (score === 0) 
         {
-            //si la vida es 0 ->que te regrese a main o que te desactive todo
+            setIsDisabled(true);
         }
+        setArrRespuestas([]);
     }
-}
-
-export default ConnectorAnswers;
+};
