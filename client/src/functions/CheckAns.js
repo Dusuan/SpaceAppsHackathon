@@ -8,7 +8,7 @@ export const checkAnswers=(a, b)=>{
         return false;
     }
 
-    for(let i;i<a.length;i++)
+    for(let i=0;i<a.length;i++)
     {
         if(a[i]===b[i])
         {

@@ -23,7 +23,12 @@
             let curr=conectorODS[topics[i]];
             arr.push(curr[randomIndex]);
         }
+        console.log(arr);
+        return arr;
+    }
 
+    export const words=(arr)=>
+    {
         let finalArr=[];
         for(let i=0;i<arr.length;i++)
         {
@@ -33,6 +38,6 @@
             }
         }
         console.log(finalArr);
-        return finalArr;
+        return finalArr;  
     }
 
