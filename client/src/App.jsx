@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Main />
       <p>{data}</p>
-      <h1 className='text-9xl'>H</h1>
+      <h1 className='text-9xl'>Hello World actualizado</h1>
     </div>
   );
 }
