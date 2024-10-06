@@ -129,7 +129,7 @@ const Flags = () => {
             <Flex
                 flexWrap="wrap"
                 justifyContent="center"
-                gap={5}
+                gap={9}
                 alignItems="center"
                 width="100%"
             >
