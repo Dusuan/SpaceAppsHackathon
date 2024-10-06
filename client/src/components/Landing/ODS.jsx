@@ -44,7 +44,8 @@ const Ods = ({ ODS }) => {
         </Wrap>
 
         <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
+          <ModalOverlay bg='blackAlpha.300'
+      backdropFilter='blur(10px)' />
           <ModalContent>
             <ModalHeader>{name}</ModalHeader>
             <ModalCloseButton />
