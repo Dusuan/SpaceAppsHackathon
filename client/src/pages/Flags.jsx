@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { Box, Flex, Text, Image } from "@chakra-ui/react";
+import React, { useState, useEffect} from "react";
+import { Box, Flex, Text, Image, Icon, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, useDisclosure, VStack  } from "@chakra-ui/react";
 import FlagSquare from "../components/FlagSquare";
 import { questions } from "../utils/questions";
 import { ods } from "../utils/ods"; // Asegúrate de que este objeto esté correctamente definido
+import { FaHeart } from "react-icons/fa";
 
 const Flags = () => {
     const [vidas, setVidas] = useState(3);
@@ -11,6 +12,8 @@ const Flags = () => {
     const [currentQuestion, setCurrentQuestion] = useState(questions[i]);
     const [message, setMessage] = useState("");
     const [currentAnswer, setCurrentAnswer] = useState("");
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const [finalMessage, setFinalMessage] = useState("");
 
     // Función para encontrar la respuesta correcta
     const findCorrectAnswer = (question) => {
@@ -40,13 +43,44 @@ const Flags = () => {
             setMessage("Respuesta incorrecta");
         }
 
+        //Si se quedan sin vidas
+        if (vidas-2 < 0) {
+            setMessage("¡Juego terminado!");
+            setFinalMessage("Se han acabado las vidas. ¿Qué quieres hacer?");
+            onOpen();
+        }
+
         // Avanzar a la siguiente pregunta
         if (i + 1 < questions.length) {
             setIndex(i + 1);
             setCurrentQuestion(questions[i + 1]);
         } else {
+            setFinalMessage("¡Felicidades! Has completado el juego.");
             setMessage("¡Juego terminado!");
+            onOpen();
         }
+    };
+
+    //Renderizar las vidas
+    const renderLives = () => {
+        return Array.from({ length: vidas }, (_, index) => (
+            <Icon key={index} as={FaHeart} color="red.500" boxSize={6} margin="0 2px"/>
+        ));
+    };
+
+    const restartGame = () => {
+        setVidas(3);
+        setScore(0);
+        setIndex(0);
+        setCurrentQuestion(questions[0]);
+        setMessage("");
+        onClose(); // Cerrar el modal al reiniciar
+    };
+
+    const goBackHome = () => {
+        // Implementa la lógica para volver al home
+        console.log("Volver al inicio");
+        onClose(); 
     };
 
     return (
@@ -60,13 +94,12 @@ const Flags = () => {
                 justifyContent={"space-between"}
                 alignItems={"center"}
                 h={"15vh"}
-                bgColor={"gray.200"}
                 w={"100%"}
             >
                 <Image
                     src={process.env.PUBLIC_URL + "/Images/ODS Logo.png"}
                     alt="ODS Logo"
-                    width="100px"
+                    width={["75px", "100px", "150px"]}
                 />
 
                 <Flex
@@ -75,10 +108,10 @@ const Flags = () => {
                     alignItems="center"
                 >
                     <Text
-                        fontSize={["xl", "3xl"]}
+                        fontSize={["l","xl", "3xl"]}
                     >SDGs Flag Game</Text>
                     <Text
-                        fontSize={"xl"}
+                        fontSize={["m", "l", "xl"]}
                         fontWeight={"light"}
                     >Guess the SDG</Text>
                 </Flex>
@@ -86,12 +119,12 @@ const Flags = () => {
                 <Image
                     src={process.env.PUBLIC_URL + "/Images/ODS Logo.png"}
                     alt="ODS Logo"
-                    width="100px"
+                    width={["75px", "100px", "150px"]}
                 />
             </Flex>
 
             <Flex justifyContent="center" alignItems="center" h="20vh" flexDirection="column">
-                <Text fontSize="lg" fontWeight={"bold"}>{`"${ods[currentAnswer]}"`}</Text>
+                <Text fontSize={["sm", "l", "xl"]} fontWeight={"bold"} padding="0.5">{`"${ods[currentAnswer]}"`}</Text>
                 <Text mt="1.5">{i+1}/17</Text>
             </Flex>
 
@@ -119,9 +152,27 @@ const Flags = () => {
                 width="100%"
                 h="15vh"
             >
-                <Text>Vidas: {vidas}</Text>
+                <Flex>
+                    {renderLives()} 
+                </Flex>
                 <Text>Score: {score}</Text>
             </Flex>
+
+            <Modal isCentered isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false} closeOnEsc={false}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>{message}</ModalHeader>
+                    <ModalBody pb={6}>
+                        <Text>{finalMessage}</Text>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button colorScheme="blue" mr={3} onClick={restartGame}>
+                            Restart
+                        </Button>
+                        <Button onClick={goBackHome}>Back Home</Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </Flex>
     );
 };

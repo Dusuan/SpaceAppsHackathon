@@ -15,7 +15,7 @@ const FlagSquare = ({odsActual, onClick}) => {
             bgColor={theme.colors[odsActual]}
             flexDirection={"column"}
             w={["120px", "250px"]}
-            h={["150px", "250px"]}
+            h={["175px", "300px"]}
             borderRadius={"10px"}
             boxShadow={"md"}
             border={"5px solid black"}
@@ -27,10 +27,10 @@ const FlagSquare = ({odsActual, onClick}) => {
                 />
                 <Text
                     display={"flex"}
-                    fontSize={["0.5rem", "l"]}
+                    fontSize={["0.75rem", "l"]}
                     fontWeight={"bold"}
                     color={"white"}
-                    h={["30px", "50px"]}
+                    h={["55px", "50px"]}
                     textAlign={"center"}
                     justifyContent={"center"}
                     alignItems={"center"}
