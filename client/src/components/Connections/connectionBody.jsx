@@ -1,10 +1,15 @@
 
 import { Button, SimpleGrid} from "@chakra-ui/react";
 
-import { connectorODS } from "../../utils/conectorODS";
+import {getTopics , selectWords} from "../../functions/GeneralFunctions"
 
+import conectorODS from "../../utils/conectorODS";
 
 export default function BodyConnection() {
+
+  const topics = getTopics();
+
+  selectWords(topics,conectorODS);
 
   
     return (

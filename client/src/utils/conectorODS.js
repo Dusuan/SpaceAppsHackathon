@@ -17,4 +17,4 @@ const connectorODS = {
     "Alianzas para lograr los objetivos": [["Cooperación", "Alianzas", "Sostenibilidad", "Desarrollo"], ["Desarrollo sostenible", "Cooperación internacional", "Políticas públicas", "Asociaciones"], ["Desarrollo regional", "Participación ciudadana", "Gobernanza inclusiva", "Sociedad civil"]],
 }
 
-export { connectorODS };
+export default connectorODS ;

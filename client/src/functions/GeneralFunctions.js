@@ -16,7 +16,7 @@
 
     export const selectWords = (topics, conectorODS) => 
     {
-        let arr;
+        let arr = [[]];
         for(let i = 0; i< topics.length ; i++)
         {
             const randomIndex = Math.floor(Math.random() * 3);
