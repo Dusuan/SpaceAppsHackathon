@@ -1,6 +1,25 @@
-    export const getTopics = () => { 
+    
+   
+   export const getTopics = () => { 
         const mySet = new Set();
-        const topics=["Fin de la pobreza","Hambre cero","Salud y bienestar","Educación de calidad", "Igualdad de género", "Agua limpia y saneamiento","Trabajo decente y crecimiento económico","Industria, innovación e infraestructura","Reducción de las desigualdades","Ciudades y comunidades sostenibles","Producción y consumo responsables","Acción por el clima","Vida submarina","Vida de ecosistemas terrestres","Paz, justicia e instituciones sólidas","Alianzas para lograr los objetivos"]
+        const topics = [
+            "End Poverty",
+            "Zero Hunger",
+            "Good Health and Well-being",
+            "Quality Education",
+            "Gender Equality",
+            "Clean Water and Sanitation",
+            "Decent Work and Economic Growth",
+            "Industry, Innovation, and Infrastructure",
+            "Reduced Inequalities",
+            "Sustainable Cities and Communities",
+            "Responsible Consumption and Production",
+            "Climate Action",
+            "Life Below Water",
+            "Life on Land",
+            "Peace, Justice and Strong Institutions",
+            "Partnerships for the Goals"
+        ];
 
         while(mySet.size < 4){
             const randomIndex = Math.floor(Math.random() * topics.length);

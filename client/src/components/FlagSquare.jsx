@@ -1,6 +1,5 @@
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import { Flex, Image, Text } from '@chakra-ui/react';
 import React from 'react';
-import { ods } from '../utils/ods';
 import theme from '../utils/theme';
 import { odsImgPath } from '../utils/odsImgPath';
 

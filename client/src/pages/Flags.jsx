@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import {Flex, Text, Image, Icon, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, useDisclosure, VStack  } from "@chakra-ui/react";
+import {Flex, Text, Image, Icon, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@chakra-ui/react";
 import FlagSquare from "../components/FlagSquare";
 import { questions } from "../utils/questions";
 import { ods } from "../utils/ods"; // Asegúrate de que este objeto esté correctamente definido
@@ -76,12 +76,6 @@ const Flags = () => {
         setCurrentQuestion(questions[0]);
         setMessage("");
         onClose(); // Cerrar el modal al reiniciar
-    };
-
-    const goBackHome = () => {
-        // Implementa la lógica para volver al home
-        console.log("Volver al inicio");
-        onClose(); 
     };
 
     return (
@@ -171,7 +165,7 @@ const Flags = () => {
                             Restart
                         </Button>
                         <Link to="/">
-                        <Button>Back Home</Button>
+                            <Button>Back Home</Button>
                         </Link>
                     </ModalFooter>
                 </ModalContent>
