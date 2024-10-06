@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import { useState, useEffect } from "react";
 import Main from "./pages/Main";
 import Flags from "./pages/Flags";
 
