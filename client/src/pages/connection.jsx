@@ -1,27 +1,22 @@
 import HeaderConnection from "../components/Connections/connectionHeader";
 import BodyConnection from "../components/Connections/connectionBody"
+import { useState } from 'react';
 
 
 import { Flex, Box} from '@chakra-ui/react';
-import FooterConnection from "../components/Connections/connectionFooter";
 
 export default function Connection(){
+    const [selectedButtons, setSelectedButtons] = useState([]);
+    const [isDisabled, setIsDisabled] = useState(false);
+    const [score, setScore] = useState(100); 
 
 
     return(
         <Flex direction={"column"}>
             <Box>
-                <HeaderConnection></HeaderConnection>
+                <BodyConnection selectedButtons={selectedButtons} setSelectedButtons={() =>setSelectedButtons} 
+                isDisabled={isDisabled} setIsDisabled={() =>setIsDisabled} score={score} setScore={() => setScore} ></BodyConnection>
             </Box>
-
-            <Box>
-                <BodyConnection ></BodyConnection>
-            </Box>
-
-            <Box>
-                <FooterConnection></FooterConnection>
-            </Box>
-            
         </Flex>
         
     );
