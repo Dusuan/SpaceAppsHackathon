@@ -6,6 +6,7 @@ import { connectorODS } from "../../utils/conectorODS";
 
 export default function BodyConnection() {
 
+  
     return (
       <SimpleGrid columns={4} spacing={4} justifyContent={'center'} alignItems="center" p={[2, 7, 10]}>
         {Array.from({ length: 16 }, (_, index) => {
