@@ -9,7 +9,7 @@ import {HStack } from '@chakra-ui/react'
 import { Tooltip } from '@chakra-ui/react'
 import { CircularProgress} from '@chakra-ui/react'
 
-
+import {Link } from 'react-router-dom'
 
 export default function BodyConnection(selectedButtons, setSelectedButtons, isDisabled, setIsDisabled, score, setScore) {
   const topics = getTopics();
@@ -35,8 +35,9 @@ export default function BodyConnection(selectedButtons, setSelectedButtons, isDi
 
                       <InfoOutlineIcon color="blackAlpha.800" boxSize={6} />
 
-                    </Tooltip>
+                    </Tooltip><Link to="/Games">
                       <Button colorScheme='blackAlpha'> Regresar al Inicio </Button>
+                      </Link>
                 </HStack>
               </Box>
               
