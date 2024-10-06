@@ -23,6 +23,14 @@
             let curr=conectorODS[topics[i]];
             arr.push(curr[randomIndex]);
         }
-        console.log(arr);
-        return arr;
+        let finalArr=[];
+        for(let i;i<arr.length;i++)
+        {
+            for(let j;j<arr.length;i++)
+            {
+                finalArr.push_(arr[i][j]);
+            }
+        }
+        console.log(finalArr);
+        return finalArr;
     }

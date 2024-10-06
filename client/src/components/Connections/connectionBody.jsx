@@ -10,8 +10,6 @@ export default function BodyConnection() {
   const topics = getTopics();
 
   selectWords(topics,conectorODS);
-
-  
     return (
       <SimpleGrid columns={4} spacing={4} justifyContent={'center'} alignItems="center" p={[2, 7, 10]}>
         {Array.from({ length: 16 }, (_, index) => {
@@ -31,4 +29,4 @@ export default function BodyConnection() {
         })}
       </SimpleGrid>
     );
-  }
+}
