@@ -20,10 +20,10 @@ const About = () => {
               align="center"
               mx="10px"
               my="20px"
-              boxSize="300px"
+              boxSize={["large: 200px", "large: 300px"]}
               borderRadius="20px"
               objectFit="cover"
-              src="/foco.jpeg"
+              src="/MEGALOGO.png"
               alt="about us"
             />
             <Heading size="sm" my={4} mb={4}>
