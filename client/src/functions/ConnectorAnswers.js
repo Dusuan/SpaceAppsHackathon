@@ -8,23 +8,16 @@ const ConnectorAnswers = ({arrRespuestas,selectedWords,setSelectedButtons, setIs
     if(trueOrFalse)
     {
         //if poner los resultados bien y desacrivar los botones y elliminar de arrRespuestas
-        setIsDisabled(true); 
-        setSelectedButtons(prev => [...prev, ...arrRespuestas]);  // Agrega los botones seleccionados correctamente al estado
-        arrRespuestas.length = 0;  // Vaciar arrRespuestas
+        setIsDisabled=true;
+        setSelectedButtons=[];
     }
     else
     {
-        setScore(prevScore => prevScore - 25);  // Restar 25 puntos
-        setIsDisabled(true);  // Desactiva temporalmente los botones para evitar spam
-        arrRespuestas.length = 0;  // Vaciar arrRespuestas
-
-        // Si el puntaje llega a 0:
-        if (score - 25 <= 0) {
-            setIsDisabled(true);  // Desactiva todo
-            // Aquí podrías agregar una lógica de navegación o notificación
-        } else {
-            // Si todavía quedan puntos, reactiva los botones no seleccionados
-            setIsDisabled(false);
+        setScore=setScore-25;
+        setSelectedButtons=[];
+        if(setScore==0)
+        {
+            //si la vida es 0 ->que te regrese a main o que te desactive todo
         }
     }
 }
