@@ -1,10 +1,11 @@
 
 import './App.css';
 import { useState, useEffect } from 'react';
-import Main from './pages/Main';
 
 //functions
 import { getTests } from './functions/test';
+import Connection from './pages/Connections/connection';
+
 
 function App() {
   const [data, setData] = useState("Hello World");
@@ -19,9 +20,8 @@ function App() {
 
   return (
     <div className="App">
-      <Main />
       <p>{data}</p>
-      <h1 className='text-9xl'>NIGGA</h1>
+      <Connection></Connection>   
     </div>
   );
 }
