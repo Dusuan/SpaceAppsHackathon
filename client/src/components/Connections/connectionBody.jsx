@@ -8,7 +8,7 @@ import {InfoOutlineIcon} from "@chakra-ui/icons";
 import {HStack } from '@chakra-ui/react'
 import { CircularProgress, Tooltip} from '@chakra-ui/react'
 import {Link } from 'react-router-dom'
-import { useState } from "react";
+
 
 //setArrRespuestas= opcione elejidas
 //setSelectedButtons= 
