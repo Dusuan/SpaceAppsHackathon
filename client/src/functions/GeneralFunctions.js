@@ -16,13 +16,14 @@
 
     export const selectWords = (topics, conectorODS) => 
     {
-        let arr = [[]];
-        for(let i = 0; i< topics.length ; i++)
+        let arr = [];
+        for(let i = 0; i<4; i++)
         {
             const randomIndex = Math.floor(Math.random() * 3);
             let curr=conectorODS[topics[i]];
             arr.push(curr[randomIndex]);
         }
+
         let finalArr=[];
         for(let i=0;i<arr.length;i++)
         {
