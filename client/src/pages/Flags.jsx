@@ -17,6 +17,7 @@ const Flags = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [finalMessage, setFinalMessage] = useState("");
     const [hardMode, setHardMode] = useState(false);
+    const [isInitOpen, setIsInitOpen] = useState(true);
 
     // Función para encontrar la respuesta correcta
     const findCorrectAnswer = (question) => {
@@ -33,7 +34,7 @@ const Flags = () => {
         // Actualizar currentAnswer cuando currentQuestion cambia
         setCurrentAnswer(findCorrectAnswer(currentQuestion));
     }, [currentQuestion]);
-
+    
     const verifyAnswer = (ods) => {
         const odsName = Object.keys(ods)[0]; // Obtener el nombre de la ODS
         const isCorrect = ods[odsName]; // Obtener el valor booleano (true/false)
@@ -166,6 +167,7 @@ const Flags = () => {
                 <Text>Score: {score}</Text>
             </Flex>
 
+            {/* Modal game over*/}
             <Modal isCentered isOpen={isOpen} onClose={onClose} closeOnOverlayClick={false} closeOnEsc={false}>
                 <ModalOverlay />
                 <ModalContent>
@@ -176,6 +178,25 @@ const Flags = () => {
                     <ModalFooter>
                         <Button colorScheme="blue" mr={3} onClick={restartGame}>
                             Restart
+                        </Button>
+                        <Link to="/">
+                            <Button>Back Home</Button>
+                        </Link>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+
+            {/* Modal game init*/}
+            <Modal isCentered isOpen={isInitOpen} onClose={() => setIsInitOpen(false)} closeOnOverlayClick={false} closeOnEsc={false}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>SDG Challenge</ModalHeader>
+                    <ModalBody pb={6}>
+                        <Text>Welcome to the SDG Challenge, try to guess all the 17 SDGs by their description.</Text>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button colorScheme="blue" mr={3} onClick={() => setIsInitOpen(false)}>
+                            Start
                         </Button>
                         <Link to="/">
                             <Button>Back Home</Button>
