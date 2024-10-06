@@ -3,7 +3,7 @@ import React from 'react';
 import theme from '../utils/theme';
 import { odsImgPath } from '../utils/odsImgPath';
 
-const FlagSquare = ({odsActual, onClick}) => {
+const FlagSquare = ({odsActual, onClick, hardMode}) => {
 
     return (
         <Flex
@@ -25,7 +25,6 @@ const FlagSquare = ({odsActual, onClick}) => {
                     width={["120px", "250px"]}
                 />
                 <Text
-                    display={"flex"}
                     fontSize={["0.75rem", "l"]}
                     fontWeight={"bold"}
                     color={"white"}
@@ -34,6 +33,7 @@ const FlagSquare = ({odsActual, onClick}) => {
                     justifyContent={"center"}
                     alignItems={"center"}
                     w={"95%"}
+                    display={(hardMode) ? "none" : "flex"}
                 >
                     {odsActual}
                 </Text>

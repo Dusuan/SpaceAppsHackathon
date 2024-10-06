@@ -1,10 +1,11 @@
 import React, { useState, useEffect} from "react";
-import {Flex, Text, Image, Icon, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure} from "@chakra-ui/react";
+import {Flex, Text, Image, Icon, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Checkbox} from "@chakra-ui/react";
 import FlagSquare from "../components/FlagSquare";
 import { questions } from "../utils/questions";
 import { ods } from "../utils/ods"; // Asegúrate de que este objeto esté correctamente definido
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { GiDevilMask } from "react-icons/gi";
 
 const Flags = () => {
     const [vidas, setVidas] = useState(3);
@@ -15,6 +16,7 @@ const Flags = () => {
     const [currentAnswer, setCurrentAnswer] = useState("");
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [finalMessage, setFinalMessage] = useState("");
+    const [hardMode, setHardMode] = useState(false);
 
     // Función para encontrar la respuesta correcta
     const findCorrectAnswer = (question) => {
@@ -46,8 +48,8 @@ const Flags = () => {
 
         //Si se quedan sin vidas
         if (vidas-2 < 0) {
-            setMessage("¡Juego terminado!");
-            setFinalMessage("Se han acabado las vidas. ¿Qué quieres hacer?");
+            setMessage("Game Over!");
+            setFinalMessage("You have run out of lives. What would you like to do?");
             onOpen();
         }
 
@@ -56,8 +58,8 @@ const Flags = () => {
             setIndex(i + 1);
             setCurrentQuestion(questions[i + 1]);
         } else {
-            setFinalMessage("¡Felicidades! Has completado el juego.");
-            setMessage("¡Juego terminado!");
+            setFinalMessage("Congratulations! You have completed the game.");
+            setMessage("Game win!");
             onOpen();
         }
     };
@@ -137,6 +139,7 @@ const Flags = () => {
                         odsActual={Object.keys(ods)[0]}
                         onClick={() => verifyAnswer(ods)}
                         flex="1 1 calc(50% - 10px)"
+                        hardMode={hardMode}
                     />
                 ))}
             </Flex>
@@ -149,6 +152,16 @@ const Flags = () => {
             >
                 <Flex>
                     {renderLives()} 
+                </Flex>
+                <Flex
+                    alignItems="center"
+                >
+                    <Checkbox colorScheme='red'
+                        onChange={() => setHardMode(!hardMode)}
+                    >
+                        Hard Mode
+                    </Checkbox>
+                    <Icon as={GiDevilMask} color="red" boxSize={6} margin="0 2px" display={(hardMode) ? "block" : "none"}/>
                 </Flex>
                 <Text>Score: {score}</Text>
             </Flex>

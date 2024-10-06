@@ -1,105 +1,105 @@
 const questions = [
     [
-        { "Igualdad de género": false },
-        { "Agua limpia y saneamiento": true },
-        { "Salud y bienestar": false },
-        { "Educación de calidad": false }
+        { "Gender Equality": false },
+        { "Clean Water and Sanitation": true },
+        { "Good Health and Well-being": false },
+        { "Quality Education": false }
     ],
     [
-        { "Hambre cero": false },
-        { "Energía asequible y no contaminante": false },
-        { "Fin de la pobreza": true },
-        { "Salud y bienestar": false }
+        { "Zero Hunger": false },
+        { "Affordable and Clean Energy": false },
+        { "No Poverty": true },
+        { "Good Health and Well-being": false }
     ],
     [
-        { "Producción y consumo responsables": true },
-        { "Trabajo decente y crecimiento económico": false },
-        { "Paz, justicia e instituciones sólidas": false },
-        { "Acción por el clima": false }
+        { "Responsible Consumption and Production": true },
+        { "Decent Work and Economic Growth": false },
+        { "Peace, Justice, and Strong Institutions": false },
+        { "Climate Action": false }
     ],
     [
-        { "Vida submarina": false },
-        { "Reducción de las desigualdades": false },
-        { "Industria, innovación e infraestructura": false },
-        { "Ciudades y comunidades sostenibles": true }
+        { "Life Below Water": false },
+        { "Reduced Inequality": false },
+        { "Industry, Innovation, and Infrastructure": false },
+        { "Sustainable Cities and Communities": true }
     ],
     [
-        { "Alianzas para lograr los objetivos": false },
-        { "Educación de calidad": true },
-        { "Paz, justicia e instituciones sólidas": false },
-        { "Acción por el clima": false }
+        { "Partnerships for the Goals": false },
+        { "Quality Education": true },
+        { "Peace, Justice, and Strong Institutions": false },
+        { "Climate Action": false }
     ],
     [
-        { "Vida submarina": false },
-        { "Industria, innovación e infraestructura": true },
-        { "Fin de la pobreza": false },
-        { "Hambre cero": false }
+        { "Life Below Water": false },
+        { "Industry, Innovation, and Infrastructure": true },
+        { "No Poverty": false },
+        { "Zero Hunger": false }
     ],
     [
-        { "Reducción de las desigualdades": false },
-        { "Igualdad de género": true },
-        { "Energía asequible y no contaminante": false },
-        { "Producción y consumo responsables": false }
+        { "Reduced Inequality": false },
+        { "Gender Equality": true },
+        { "Affordable and Clean Energy": false },
+        { "Responsible Consumption and Production": false }
     ],
     [
-        { "Vida submarina": false },
-        { "Agua limpia y saneamiento": false },
-        { "Paz, justicia e instituciones sólidas": false },
-        { "Hambre cero": true }
+        { "Life Below Water": false },
+        { "Clean Water and Sanitation": false },
+        { "Peace, Justice, and Strong Institutions": false },
+        { "Zero Hunger": true }
     ],
     [
-        { "Fin de la pobreza": false },
-        { "Reducción de las desigualdades": false },
-        { "Vida de ecosistemas terrestres": false },
-        { "Energía asequible y no contaminante": true }
+        { "No Poverty": false },
+        { "Reduced Inequality": false },
+        { "Life on Land": false },
+        { "Affordable and Clean Energy": true }
     ],
     [
-        { "Producción y consumo responsables": false },
-        { "Agua limpia y saneamiento": false },
-        { "Acción por el clima": true },
-        { "Ciudades y comunidades sostenibles": false }
+        { "Responsible Consumption and Production": false },
+        { "Clean Water and Sanitation": false },
+        { "Climate Action": true },
+        { "Sustainable Cities and Communities": false }
     ],
     [
-        { "Vida submarina": true },
-        { "Paz, justicia e instituciones sólidas": false },
-        { "Educación de calidad": false },
-        { "Alianzas para lograr los objetivos": false }
+        { "Life Below Water": true },
+        { "Peace, Justice, and Strong Institutions": false },
+        { "Quality Education": false },
+        { "Partnerships for the Goals": false }
     ],
     [
-        { "Igualdad de género": false },
-        { "Reducción de las desigualdades": true },
-        { "Trabajo decente y crecimiento económico": false },
-        { "Vida de ecosistemas terrestres": false }
+        { "Gender Equality": false },
+        { "Reduced Inequality": true },
+        { "Decent Work and Economic Growth": false },
+        { "Life on Land": false }
     ],
     [
-        { "Paz, justicia e instituciones sólidas": true },
-        { "Industria, innovación e infraestructura": false },
-        { "Producción y consumo responsables": false },
-        { "Agua limpia y saneamiento": false }
+        { "Peace, Justice, and Strong Institutions": true },
+        { "Industry, Innovation, and Infrastructure": false },
+        { "Responsible Consumption and Production": false },
+        { "Clean Water and Sanitation": false }
     ],
     [
-        { "Salud y bienestar": false },
-        { "Fin de la pobreza": false },
-        { "Vida de ecosistemas terrestres": true },
-        { "Ciudades y comunidades sostenibles": false }
+        { "Good Health and Well-being": false },
+        { "No Poverty": false },
+        { "Life on Land": true },
+        { "Sustainable Cities and Communities": false }
     ],
     [
-        { "Acción por el clima": false },
-        { "Energía asequible y no contaminante": false },
-        { "Trabajo decente y crecimiento económico": true },
-        { "Igualdad de género": false }
+        { "Climate Action": false },
+        { "Affordable and Clean Energy": false },
+        { "Decent Work and Economic Growth": true },
+        { "Gender Equality": false }
     ],
     [
-        { "Educación de calidad": false },
-        { "Reducción de las desigualdades": false },
-        { "Vida submarina": false },
-        { "Alianzas para lograr los objetivos": true }
+        { "Quality Education": false },
+        { "Reduced Inequality": false },
+        { "Life Below Water": false },
+        { "Partnerships for the Goals": true }
     ],
     [
-        { "Vida submarina": true },
-        { "Hambre cero": false },
-        { "Fin de la pobreza": false },
-        { "Producción y consumo responsables": false }
+        { "Life Below Water": true },
+        { "Zero Hunger": false },
+        { "No Poverty": false },
+        { "Responsible Consumption and Production": false }
     ]
 ];
 

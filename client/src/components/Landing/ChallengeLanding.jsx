@@ -57,7 +57,7 @@ const ChallengeLanding = () => {
               fontSize={["md", "3xl", "4xl", "5xl"]}
               textAlign="center"
             >
-              The ODS Challenge
+              The SDG Challenge
             </Text>
           </Box>
           <Link to="/Games">
