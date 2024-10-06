@@ -21,6 +21,8 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
   const selectedWords = selectWords(topics, conectorODS);
   const wordsFinal = words(selectedWords);
 
+  const dummy=[];
+
 
   let array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   array.sort(() => Math.random() - 0.5);
@@ -68,7 +70,7 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
               height="100px"
               color="white"
               _hover={{ bg: 'teal.600' }}
-              onClick={() => setArrRespuestas(prev => [...prev, wordsFinal[array[index]]])}
+              onClick={() => dummy.push(wordsFinal[array[index]]) }
             >
               {wordsFinal[array[index]]}
             </Button>
@@ -78,7 +80,11 @@ export default function BodyConnection(selectedButtons, setSelectedButtons,isDis
       
       <Flex color = "white" justify={'center'} align={'center'}>
               <Box p = {7}>
-                  <Button onClick={() => ConnectorAnswers(setArrRespuestas,arrRespuestas,selectedWords, setSelectedButtons, setIsDisabled, setScore)}> Submit </Button>
+                  <Button onClick={() => ConnectorAnswers(
+                    setArrRespuestas(dummy),arrRespuestas,
+                    selectedWords, 
+                    setSelectedButtons, setIsDisabled, setScore
+                    )}> Submit </Button>
               </Box>
         </Flex>
     </Flex>
