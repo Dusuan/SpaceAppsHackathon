@@ -28,7 +28,7 @@
         {
             for(let j;j<arr.length;i++)
             {
-                finalArr.push_(arr[i][j]);
+                finalArr.push(arr[i][j]);
             }
         }
         console.log(finalArr);

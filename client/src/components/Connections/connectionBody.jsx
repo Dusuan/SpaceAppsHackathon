@@ -23,7 +23,7 @@ export default function BodyConnection() {
               color="white"
               _hover={{ bg: 'teal.600' }}
             >
-              {selectWords[[]]}
+              {selectedWords[array[index++]]}
               
             </Button>
             
