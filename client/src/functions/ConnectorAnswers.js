@@ -8,11 +8,16 @@ const ConnectorAnswers=(arrRespuestas,selectedWords,setSelectedButtons, setIsDis
     {
         //if poner los resultados bien y desacrivar los botones y elliminar de arrRespuestas
         setIsDisabled=true;
-        arrRespuestas=[];
+        setSelectedButtons=[];
     }
     else
     {
-        //eliminar respuestas de arrRespuestas y bajar la vida ->checar si la vida es 0 ->que te regrese a main o que te desactive todo
+        setScore=setScore-25;
+        setSelectedButtons=[];
+        if(setScore==0)
+        {
+            //si la vida es 0 ->que te regrese a main o que te desactive todo
+        }
     }
 
 }
