@@ -18,6 +18,32 @@ const Flags = () => {
     const [finalMessage, setFinalMessage] = useState("");
     const [hardMode, setHardMode] = useState(false);
     const [isInitOpen, setIsInitOpen] = useState(true);
+    const [isFormOpen, setIsFormOpen] = useState(false);
+
+    //Timer
+    const [isActive, setIsActive] = useState(false);
+    const [seconds, setSeconds] = useState(0);
+
+    //Timer
+    useEffect(() => {
+        let interval = null;
+
+        if (isActive) {
+            interval = setInterval(() => {
+                setSeconds((prevSeconds) => prevSeconds + 1);
+            }, 1000);
+        } else if (!isActive && seconds !== 0) {
+            clearInterval(interval);
+        }
+
+        return () => clearInterval(interval); // Limpiar el intervalo al desmontar
+    }, [isActive, seconds]);
+
+    const formatTime = (sec) => {
+        const minutes = Math.floor(sec / 60);
+        const remainingSeconds = sec % 60;
+        return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+    };
 
     // Función para encontrar la respuesta correcta
     const findCorrectAnswer = (question) => {
@@ -34,7 +60,7 @@ const Flags = () => {
         // Actualizar currentAnswer cuando currentQuestion cambia
         setCurrentAnswer(findCorrectAnswer(currentQuestion));
     }, [currentQuestion]);
-    
+
     const verifyAnswer = (ods) => {
         const odsName = Object.keys(ods)[0]; // Obtener el nombre de la ODS
         const isCorrect = ods[odsName]; // Obtener el valor booleano (true/false)
@@ -52,6 +78,8 @@ const Flags = () => {
             setMessage("Game Over!");
             setFinalMessage("You have run out of lives. What would you like to do?");
             onOpen();
+            setIsActive(false);
+            setSeconds(0);
         }
 
         // Avanzar a la siguiente pregunta
@@ -62,6 +90,8 @@ const Flags = () => {
             setFinalMessage("Congratulations! You have completed the game.");
             setMessage("Game win!");
             onOpen();
+            setIsActive(false);
+            //Guardar el tiempo en DB
         }
     };
 
@@ -78,6 +108,7 @@ const Flags = () => {
         setIndex(0);
         setCurrentQuestion(questions[0]);
         setMessage("");
+        setIsActive(true);
         onClose(); // Cerrar el modal al reiniciar
     };
 
@@ -124,6 +155,7 @@ const Flags = () => {
             <Flex justifyContent="center" alignItems="center" h="20vh" flexDirection="column">
                 <Text fontSize={["sm", "l", "xl"]} fontWeight={"bold"} padding="0.5">{`"${ods[currentAnswer]}"`}</Text>
                 <Text mt="1.5">{i+1}/17</Text>
+                <Text>{formatTime(seconds)}</Text>
             </Flex>
 
             {/**display modal of message */}
@@ -195,9 +227,29 @@ const Flags = () => {
                         <Text>Welcome to the SDG Challenge, try to guess all the 17 SDGs by their description.</Text>
                     </ModalBody>
                     <ModalFooter>
-                        <Button colorScheme="blue" mr={3} onClick={() => setIsInitOpen(false)}>
+                        <Button colorScheme="blue" mr={3} onClick={() => {
+                            setIsInitOpen(false)
+                            setIsActive(true)
+                        }}>
                             Start
                         </Button>
+                        <Link to="/">
+                            <Button>Back Home</Button>
+                        </Link>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+
+            {/* Form*/}
+            <Modal isCentered isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} closeOnOverlayClick={false} closeOnEsc={false}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Save your progress</ModalHeader>
+                    <ModalBody pb={6}>
+                        <Text>{`Your time was: ${seconds}`}</Text>
+                    </ModalBody>
+                    <ModalFooter>
+                        
                         <Link to="/">
                             <Button>Back Home</Button>
                         </Link>
