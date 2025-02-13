@@ -1,6 +1,5 @@
-Hackathon Nasa
+Hackathon Nasa Space Apps 2024
 
 Evento: SDGs in the classroom
 
-Idea: hacer una especie de Wordle, con las ODS.
-Actualmente planeamos hacer una especie del juego Connector para las ODS y el juego de las banderas del Pez.
+Videojuego web desarrollado para el uso de adolecentes en el áula, con el objetivo de fomentar un aprendizaje más disfrutable y cón más retención de atencións
